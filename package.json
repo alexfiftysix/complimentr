@@ -1,6 +1,6 @@
 {
   "name": "complimentr",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Compliment and happiness generator",
   "author": "Alexfiftysix",
   "main": "dist/index.js",

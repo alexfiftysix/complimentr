@@ -47,3 +47,4 @@ A weight of 1 means that you will always get an emoji, a weight of 0 means you w
 - I don't think I'm publishing this thing correctly
   - Can it be smaller?
   - Do I need this .tgz when I 1) already have the code all there 2) it's huge compared to the code?
+- Test the maxLength function
