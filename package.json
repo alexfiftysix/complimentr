@@ -1,6 +1,6 @@
 {
   "name": "complimentr",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Compliment and happiness generator",
   "author": "Alexfiftysix",
   "main": "dist/index.js",
@@ -14,5 +14,7 @@
     "typescript": "^5.5.3"
   },
   "private": false,
-  "keywords": ["compliments", "positivity", "fun", "happiness", "joy", "timesheets"]
+  "keywords": ["compliments", "positivity", "fun", "happiness", "joy", "timesheets"],
+  "license": "LGPL-3.0-only",
+  "repository": "https://github.com/alexfiftysix/complimentr"
 }
