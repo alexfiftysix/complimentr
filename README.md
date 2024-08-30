@@ -39,3 +39,8 @@ It's not too clever about it - if there's any possibility with your given words 
 ### Setting emoji weight
 An emoji will be optionally appended to the end of the string, based on the weight provided (by default 0.5).
 A weight of 1 means that you will always get an emoji, a weight of 0 means you will never get an emoji.
+
+## TODO
+- Casing: need to make sure our sentences start with a capital
+- Punctuation: if no emoji, we should end with a nice strong `!`
+- a vs an - sort that out
