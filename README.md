@@ -42,7 +42,6 @@ A weight of 1 means that you will always get an emoji, a weight of 0 means you w
 
 ## TODO
 - Casing: need to make sure our sentences start with a capital
-- Punctuation: if no emoji, we should end with a nice strong `!`
 - a vs an - sort that out
 - I don't think I'm publishing this thing correctly
   - Do I need this .tgz when I 1) already have the code all there 2) it's huge compared to the code?

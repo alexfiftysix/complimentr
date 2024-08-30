@@ -5,7 +5,7 @@ import {qualifiers} from "./data/qualifiers";
 import {emotions} from "./data/emotions";
 import {emojis} from "./data/emojis";
 import {randomChoice} from "./utils/array-utils";
-import {fillTemplate, filterTemplatesOnMaxLength, ITemplateInputs} from "./complimentr-core";
+import {fillTemplate, filterTemplatesOnMaxLength, ITemplateInputs} from "./utils/template-string-utils";
 
 interface IGenerateOptions {
     templates?: string[],
