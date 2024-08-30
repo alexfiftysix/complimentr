@@ -57,5 +57,5 @@ export const fillTemplate = (template: string, inputs: ITemplateInputs): string 
     const withQualifiers = replaceAllOfType(withAdjectives, '{qual}', inputs.qualifiers);
     const withEmotions = replaceAllOfType(withQualifiers, '{emotion}', inputs.emotions);
     const withFinalPunctuation = addFinalPunctuation(withEmotions, inputs.emojis, inputs.emojiWeight ?? 0.5);
-    return withFinalPunctuation;
+    return `${withFinalPunctuation[0].toUpperCase()}${withFinalPunctuation.slice(1)}`;
 }

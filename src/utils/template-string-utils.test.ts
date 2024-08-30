@@ -11,49 +11,54 @@ const emptyInputs: ITemplateInputs = {
 
 test('fillTemplate with noun', async () => {
         expect(
-            fillTemplate('with {noun}', {...emptyInputs, nouns: ['example']} )
-        ).toBe('with example!')
+            fillTemplate('With {noun}', {...emptyInputs, nouns: ['example']} )
+        ).toBe('With example!')
     }
 )
 
 test('fillTemplate with adjective', async () => {
         expect(
-            fillTemplate('with {adj}', {...emptyInputs, adjectives: ['example']} )
-        ).toBe('with example!')
+            fillTemplate('With {adj}', {...emptyInputs, adjectives: ['example']} )
+        ).toBe('With example!')
     }
 )
 
 test('fillTemplate with qualifier', async () => {
         expect(
-            fillTemplate('with {qual}', {...emptyInputs, qualifiers: ['example']} )
-        ).toBe('with example!')
+            fillTemplate('With {qual}', {...emptyInputs, qualifiers: ['example']} )
+        ).toBe('With example!')
     }
 )
 
 test('fillTemplate with emotion', async () => {
         expect(
-            fillTemplate('with {emotion}', {...emptyInputs, emotions: ['example']} )
-        ).toBe('with example!')
+            fillTemplate('With {emotion}', {...emptyInputs, emotions: ['example']} )
+        ).toBe('With example!')
     }
 )
 
 test('fillTemplate with definite emoji', async () => {
         expect(
             fillTemplate('with', {...emptyInputs, adjectives: ['example'], emojis: ['😎'], emojiWeight: 1} )
-        ).toBe('with 😎')
+        ).toBe('With 😎')
     }
 )
 
 test('fillTemplate with definitely no emoji', async () => {
         expect(
             fillTemplate('with', {...emptyInputs, adjectives: ['example'], emojiWeight: 0} )
-        ).toBe('with!')
+        ).toBe('With!')
     }
 )
 
+test('fillTemplate capitalises first char of string', async () => {
+    expect(fillTemplate('template', emptyInputs))
+        .toBe('Template!')
+})
+
 test('templateMaxLength', async () => {
     const maxLength = templateMaxLength(
-        'with {adj}',
+        'With {adj}',
         {...emptyInputs, adjectives: ['aReallyLongExampleWhichWillOverfillTheQuota']},
     );
     expect(maxLength).toBe(49)
