@@ -4,7 +4,7 @@ export const replaceAllOfType = (template: string, toReplace: string, candidates
     let updatedTemplate = template
     while (updatedTemplate.includes(toReplace)) {
         const replacement = randomChoice(candidates)
-        updatedTemplate.replace(toReplace, replacement)
+        updatedTemplate = updatedTemplate.replace(toReplace, replacement)
     }
 
     return updatedTemplate;
