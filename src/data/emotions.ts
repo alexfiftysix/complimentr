@@ -1,8 +1,6 @@
 export const emotions = [
     "euphoric",
     "exhilarated",
-    "great",
-    "fantastic",
     "joyful",
     "overjoyed",
     "happy",
