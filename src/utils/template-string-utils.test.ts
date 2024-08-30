@@ -73,3 +73,15 @@ test('filterTemplatesOnMaxLength considers length of tokens', async () => {
     console.log(filtered);
     expect(filtered).toEqual(['simple'])
 })
+
+test('fillTemplate deals with indefinite articles', async () => {
+    expect(
+        fillTemplate('a apple is a fruit and not a ant. A apple', emptyInputs)
+    ).toBe('An apple is a fruit and not an ant. An apple!')
+})
+
+test('fillTemplate deals with indefinite articles after replacing tokens', async () => {
+    expect(
+        fillTemplate('a {noun} is a fruit and not a ant. A {noun}', {...emptyInputs, nouns: ['apple']})
+    ).toBe('An apple is a fruit and not an ant. An apple!')
+})

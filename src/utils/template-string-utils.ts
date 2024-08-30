@@ -35,6 +35,15 @@ export const filterTemplatesOnMaxLength = (templates: string[], maxLength: numbe
     return applicableTemplates;
 }
 
+// Make sure that 'a' is replaced with 'an' where required
+const updateIndefiniteArticles = (template: string) => {
+    return template
+        .replace(/ a ([aeiou])/g, ' an $1')
+        .replace(/^a ([aeiou])/g, 'an $1')
+        .replace(/ A ([aeiou])/g, ' An $1')
+        .replace(/^A ([aeiou])/g, 'An $1')
+}
+
 export const templateMaxLength = (template: string, inputs: ITemplateInputs): number => {
     const longestNoun = inputs.nouns.sort(byLength)[0];
     const longestAdjective = inputs.adjectives.sort(byLength)[0];
@@ -51,11 +60,18 @@ export const templateMaxLength = (template: string, inputs: ITemplateInputs): nu
     return longestVersionOfTemplate.length;
 }
 
+const capitaliseFirstLetter = (template: string) : string => {
+    return `${template[0].toUpperCase()}${template.slice(1)}`;
+}
+
 export const fillTemplate = (template: string, inputs: ITemplateInputs): string => {
     const withNouns = replaceAllOfType(template, '{noun}', inputs.nouns);
     const withAdjectives = replaceAllOfType(withNouns, '{adj}', inputs.adjectives);
     const withQualifiers = replaceAllOfType(withAdjectives, '{qual}', inputs.qualifiers);
     const withEmotions = replaceAllOfType(withQualifiers, '{emotion}', inputs.emotions);
     const withFinalPunctuation = addFinalPunctuation(withEmotions, inputs.emojis, inputs.emojiWeight ?? 0.5);
-    return `${withFinalPunctuation[0].toUpperCase()}${withFinalPunctuation.slice(1)}`;
+    const withCapitalisedFirstLetter = capitaliseFirstLetter(withFinalPunctuation)
+    const withUpdatedArticles = updateIndefiniteArticles(withCapitalisedFirstLetter)
+
+    return withUpdatedArticles;
 }

@@ -41,6 +41,4 @@ An emoji will be optionally appended to the end of the string, based on the weig
 A weight of 1 means that you will always get an emoji, a weight of 0 means you will never get an emoji.
 
 ## TODO
-- Casing: need to make sure our sentences start with a capital
-- a vs an - sort that out
 - minify the output
