@@ -4,7 +4,7 @@ import {nouns} from "./data/nouns";
 import {adjectives} from "./data/adjectives";
 import {qualifiers} from "./data/qualifiers";
 import {emotions} from "./data/emotions";
-import {emoticons} from "./data/emoticons";
+import {emojis} from "./data/emojis";
 import {appendOptionalString, replaceAllOfType} from "./utils/template-string-utils";
 
 interface IGenerateOptions {
@@ -13,14 +13,14 @@ interface IGenerateOptions {
     adjectives?: string[],
     qualifiers?: string[],
     emotions?: string[],
-    emoticons?: string[],
+    emojis?: string[],
 
     additionalTemplates?: string[],
     additionalNouns?: string[],
     additionalAdjectives?: string[],
     additionalQualifiers?: string[],
     additionalEmotions?: string[],
-    additionalEmoticons?: string[],
+    additionalEmojis?: string[],
 
     emoticonWeight?: number,
 }
@@ -31,7 +31,7 @@ export const generateCompliment = (options: IGenerateOptions = {}) : string => {
     const allAdjectives: string[] = [...options.adjectives ?? adjectives, ...options.additionalAdjectives ?? []];
     const allQualifiers: string[] = [...options.qualifiers ?? qualifiers, ...options.additionalQualifiers ?? []];
     const allEmotions: string[] = [...options.emotions ?? emotions, ...options.additionalEmotions ?? []];
-    const allEmoticons: string[] = [...options.emoticons ?? emoticons, ...options.additionalEmoticons ?? []];
+    const allEmojis: string[] = [...options.emojis ?? emojis, ...options.additionalEmojis ?? []];
 
     const template = randomChoice(allSentenceStructures);
 
@@ -40,7 +40,7 @@ export const generateCompliment = (options: IGenerateOptions = {}) : string => {
     const withQualifiers = replaceAllOfType(withAdjectives, '{qual}', allQualifiers);
     const withEmotions = replaceAllOfType(withQualifiers, '{emotion}', allEmotions);
 
-    const withOptionalEmoticon = appendOptionalString(withEmotions, allEmoticons, options.emoticonWeight ?? 0.5);
+    const withOptionalEmoji = appendOptionalString(withEmotions, allEmojis, options.emoticonWeight ?? 0.5);
 
-    return withOptionalEmoticon;
+    return withOptionalEmoji;
 }
