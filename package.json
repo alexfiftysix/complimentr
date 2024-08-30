@@ -1,0 +1,14 @@
+{
+  "name": "complimentr",
+  "version": "0.1.0",
+  "description": "Compliment and happiness generator",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  },
+  "private": false
+}

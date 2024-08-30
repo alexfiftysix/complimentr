@@ -1,0 +1,23 @@
+export const complimentSentenceStructures = [
+    "{adj}",
+    "You're doing {adj}",
+    "Oh my gosh, that was {adj}",
+    "{adj} quality",
+    "So {adj}",
+    "How {adj}",
+    "Who knew anyone could be so {adj}",
+    "You are a {adj} {noun}",
+    "Oh my gosh, that was {qual} {adj}",
+    "That was {qual} {adj}",
+    "how {qual} {adj}",
+    "That was so {adj}, I am {emotion}",
+    "You are the {noun}",
+    "You are such a {noun}",
+    "You are such a {qual} {adj} {noun}",
+    "You are such a {adj} {noun}",
+    "How {adj}, you are a {noun}",
+    "I feel {emotion}",
+    "Hey! I hope you know that you're {adj}. A real {noun}",
+    "You {adj} {noun}",
+    "I just had to let you know that you're {adj}"
+]
