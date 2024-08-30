@@ -1,0 +1,1 @@
+export const byLength = (a: string, b: string) => b.length - a.length
