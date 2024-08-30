@@ -1,6 +1,6 @@
 {
   "name": "complimentr",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Compliment and happiness generator",
   "author": "Alexfiftysix",
   "main": "dist/index.js",
@@ -13,5 +13,6 @@
   "devDependencies": {
     "typescript": "^5.5.3"
   },
-  "private": false
+  "private": false,
+  "keywords": ["compliments", "positivity", "fun", "happiness"]
 }
