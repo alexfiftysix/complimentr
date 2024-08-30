@@ -45,4 +45,3 @@ A weight of 1 means that you will always get an emoji, a weight of 0 means you w
 - a vs an - sort that out
 - I don't think I'm publishing this thing correctly
   - Do I need this .tgz when I 1) already have the code all there 2) it's huge compared to the code?
-- Test the maxLength function

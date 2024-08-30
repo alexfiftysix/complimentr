@@ -43,8 +43,8 @@ export const templateMaxLength = (template: string, inputs: ITemplateInputs): nu
     const longestEmoji = inputs.emojiWeight <= 0 ? '!' : ' 😎';
 
     let longestVersionOfTemplate = replaceAllOfType(template, '{noun}', [longestNoun]);
-    longestVersionOfTemplate = replaceAllOfType(longestVersionOfTemplate, '{adjective}', [longestAdjective]);
-    longestVersionOfTemplate = replaceAllOfType(longestVersionOfTemplate, '{qualifier}', [longestQualifier]);
+    longestVersionOfTemplate = replaceAllOfType(longestVersionOfTemplate, '{adj}', [longestAdjective]);
+    longestVersionOfTemplate = replaceAllOfType(longestVersionOfTemplate, '{qual}', [longestQualifier]);
     longestVersionOfTemplate = replaceAllOfType(longestVersionOfTemplate, '{emotion}', [longestEmotion]);
     longestVersionOfTemplate = `${longestVersionOfTemplate}${longestEmoji}`;
 
