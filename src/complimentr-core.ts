@@ -1,10 +1,3 @@
-import {randomChoice} from "./utils/array-utils";
-import {complimentSentenceStructures} from "./data/compliment-sentence-structures";
-import {nouns} from "./data/nouns";
-import {adjectives} from "./data/adjectives";
-import {qualifiers} from "./data/qualifiers";
-import {emotions} from "./data/emotions";
-import {emojis} from "./data/emojis";
 import {appendOptionalString, replaceAllOfType} from "./utils/template-string-utils";
 import {byLength} from "./utils/filters";
 
