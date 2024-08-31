@@ -1,4 +1,4 @@
-export const qualifiers = [
+export const adverbs = [
     "flippin'",
     "superbly",
     "incredibly",

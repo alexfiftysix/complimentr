@@ -3,7 +3,7 @@ import {fillTemplate, filterTemplatesOnMaxLength, ITemplateInputs, templateMaxLe
 const emptyInputs: ITemplateInputs = {
     nouns: [],
     adjectives: [],
-    qualifiers: [],
+    adverbs: [],
     emotions: [],
     emojis: [],
     emojiWeight: 0,
@@ -18,14 +18,14 @@ test('fillTemplate with noun', async () => {
 
 test('fillTemplate with adjective', async () => {
         expect(
-            fillTemplate('With {adj}', {...emptyInputs, adjectives: ['example']} )
+            fillTemplate('With {adjective}', {...emptyInputs, adjectives: ['example']} )
         ).toBe('With example!')
     }
 )
 
-test('fillTemplate with qualifier', async () => {
+test('fillTemplate with adverb', async () => {
         expect(
-            fillTemplate('With {qual}', {...emptyInputs, qualifiers: ['example']} )
+            fillTemplate('With {adverb}', {...emptyInputs, adverbs: ['example']} )
         ).toBe('With example!')
     }
 )
@@ -58,7 +58,7 @@ test('fillTemplate capitalises first char of string', async () => {
 
 test('templateMaxLength', async () => {
     const maxLength = templateMaxLength(
-        'With {adj}',
+        'With {adjective}',
         {...emptyInputs, adjectives: ['aReallyLongExampleWhichWillOverfillTheQuota']},
     );
     expect(maxLength).toBe(49)
@@ -66,7 +66,7 @@ test('templateMaxLength', async () => {
 
 test('filterTemplatesOnMaxLength considers length of tokens', async () => {
     const filtered = filterTemplatesOnMaxLength(
-        ['simple', 'with {adj}'],
+        ['simple', 'with {adjective}'],
         20,
         {...emptyInputs, adjectives: ['aReallyLongExampleWhichWillOverfillTheQuota']},
     );

@@ -1,7 +1,7 @@
-import {complimentSentenceStructures} from "./data/compliment-sentence-structures";
+import {sentenceTemplates} from "./data/sentence-templates";
 import {nouns} from "./data/nouns";
 import {adjectives} from "./data/adjectives";
-import {qualifiers} from "./data/qualifiers";
+import {adverbs} from "./data/adverbs";
 import {emotions} from "./data/emotions";
 import {emojis} from "./data/emojis";
 import {randomChoice} from "./utils/array-utils";
@@ -11,7 +11,7 @@ interface IGenerateOptions {
     templates?: string[],
     nouns?: string[],
     adjectives?: string[],
-    qualifiers?: string[],
+    adverbs?: string[],
     emotions?: string[],
     emojis?: string[],
 
@@ -28,11 +28,11 @@ interface IGenerateOptions {
 }
 
 export const generateCompliment = (options: IGenerateOptions = {}) : string => {
-    const allTemplates: string[] = [...options.templates ?? complimentSentenceStructures, ...options.additionalTemplates ?? []];
+    const allTemplates: string[] = [...options.templates ?? sentenceTemplates, ...options.additionalTemplates ?? []];
     const inputs: ITemplateInputs = {
         nouns : [...options.nouns ?? nouns, ...options.additionalNouns ?? []],
         adjectives : [...options.adjectives ?? adjectives, ...options.additionalAdjectives ?? []],
-        qualifiers : [...options.qualifiers ?? qualifiers, ...options.additionalQualifiers ?? []],
+        adverbs : [...options.adverbs ?? adverbs, ...options.additionalQualifiers ?? []],
         emotions : [...options.emotions ?? emotions, ...options.additionalEmotions ?? []],
         emojis : [...options.emojis ?? emojis, ...options.additionalEmojis ?? []],
         emojiWeight: options.emojiWeight ?? 0.5,
