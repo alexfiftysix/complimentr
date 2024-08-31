@@ -21,6 +21,8 @@ All these compliments are 100% human curated nonsense 😊
 ## How to use
 
 Basic usage is simple, just call `generateCompliment()` to receive a lovely compliment.
+As of writing, the default complimentr lists can generate `9916` unique compliments.
+Check out `extras/stats.ts` in the source to run your own stats if making custom complo lists. 
 
 ### Advanced usage
 
