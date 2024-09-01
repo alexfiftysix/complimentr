@@ -6,14 +6,6 @@ import {emotions} from "../data/emotions";
 import {emojis} from "../data/emojis";
 import {sentenceTemplates} from "../data/sentence-templates";
 
-const tokens = [
-    '{noun}',
-    '{adjective}',
-    '{adverb}',
-    '{emotion}',
-    '{emoji}',
-]
-
 const defaultInputs: ITemplateInputs = {
     nouns: nouns,
     adjectives: adjectives,
@@ -35,11 +27,20 @@ const howManyUniqueComplimentsExist = (templates: string[], inputs: ITemplateInp
     }
 
     templates.forEach(template => {
-        tokens.forEach(token => {
-            const regExp = new RegExp(String.raw`\s${token}\s`, "g");
-            const count = (template.match(regExp) || []).length
-            total += tokenToCount[token]
-        })
+        const nouns = (template.match(/{noun}/g) || []).length
+        const adjectives = (template.match(/{adjective}/g) || []).length
+        const adverbs = (template.match(/{adverb}/g) || []).length
+        const emotions = (template.match(/{emotion}/g) || []).length
+
+        const possibilities = [
+            nouns * tokenToCount['{noun}'] || 1, // if token isn't present, there's 1 possibility
+            adjectives * tokenToCount['{adjective}'] || 1,
+            adverbs * tokenToCount['{adverb}'] || 1,
+            emotions * tokenToCount['{emotion}'] || 1,
+            tokenToCount['{emojis}'] || 1,
+        ].reduce((a, b) => a * b)
+
+        total += possibilities
     })
 
     return total;
