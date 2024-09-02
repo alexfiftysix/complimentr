@@ -37,7 +37,7 @@ const howManyUniqueComplimentsExist = (templates: string[], inputs: ITemplateInp
             adjectives * tokenToCount['{adjective}'] || 1,
             adverbs * tokenToCount['{adverb}'] || 1,
             emotions * tokenToCount['{emotion}'] || 1,
-            tokenToCount['{emojis}'] || 1,
+            tokenToCount['{emoji}'] || 1,
         ].reduce((a, b) => a * b)
 
         total += possibilities

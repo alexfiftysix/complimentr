@@ -21,7 +21,7 @@ All these compliments are 100% human curated nonsense 😊
 ## How to use
 
 Basic usage is simple, just call `generateCompliment()` to receive a lovely compliment.
-As of writing, the default complimentr lists can generate `2,699,184` unique compliments.
+As of writing, the default complimentr lists can generate `2,699,184` unique compliments (`45,886,128` if you think trailing emojis make compliments unique).
 Check out `extras/stats.ts` in the source to run your own stats if making custom complo lists. 
 
 ### Advanced usage
