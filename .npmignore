@@ -1,6 +1,5 @@
 /src/
 /.idea/
 package-lock.json
-jest.config.js
+jest.config.ts
 *.test.ts
-tsconfig.json
