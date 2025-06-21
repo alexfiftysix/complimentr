@@ -1,17 +1,17 @@
 {
   "name": "complimentr",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "type": "module",
   "description": "Compliment and happiness generator",
   "author": "Alexfiftysix",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "types": "./dist/index.d.ts",
+  "exports": "./dist/index.js",
   "files": [
-    "dist"
+    "dist/index.js",
+    "dist/index.d.ts"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "build": "tsup src/index.ts --format esm --dts --clean",
     "clean": "rimraf dist",
     "prepack": "npm run clean && npm run build",
     "prepublish": "npm run build",
