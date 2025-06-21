@@ -1,27 +1,18 @@
 {
   "name": "complimentr",
-  "version": "1.0.5",
+  "version": "1.0.9",
   "type": "module",
   "description": "Compliment and happiness generator",
   "author": "Alexfiftysix",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.mjs",
-  "types": "dist/types/index.d.ts",
-  "exports": {
-    ".": {
-      "required": "dist/cjs/index.js",
-      "import": "dist/esm/index.mjs"
-    }
-  },
-  "diles": [
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
     "dist"
   ],
   "scripts": {
-    "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build:esm": "tsc -p tsconfig.esm.json && npm run rename:esm",
-    "build": "npm run build:cjs && npm run build:esm",
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
     "clean": "rimraf dist",
-    "rename:esm": "zsh ./scripts/fix-mjs.sh",
     "prepack": "npm run clean && npm run build",
     "prepublish": "npm run build",
     "test": "jest"
@@ -32,6 +23,7 @@
     "rimraf": "^6.0.1",
     "ts-jest": "^29.4.0",
     "ts-node": "^10.9.2",
+    "tsup": "^8.5.0",
     "typescript": "^5.8.3"
   },
   "private": false,
@@ -42,7 +34,8 @@
     "happiness",
     "joy",
     "timesheets",
-    "procgen"
+    "procgen",
+    "complimentr"
   ],
   "license": "LGPL-3.0-only",
   "repository": "https://github.com/alexfiftysix/complimentr"

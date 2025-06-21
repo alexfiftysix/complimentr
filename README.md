@@ -58,5 +58,7 @@ A weight of 1 means that you will always get an emoji, a weight of 0 means you w
 
 ## Publishing
 This one's just for me.
-Remember to update the version in package.json, and use `npm publish`.
-If you're not logged in to your npm account, you should get prompted.
+1. Remember to update the version in package.json
+2. Build: `npm build`
+3. Publish: `npm publish`.
+   If you're not logged in to your npm account, you should get prompted.
